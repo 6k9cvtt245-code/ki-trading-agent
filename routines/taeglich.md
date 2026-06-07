@@ -34,6 +34,33 @@ mit dem in memory/portfolio.md notierten Stop-Loss.
 - Kurs <= Stop-Loss?  → VERKAUF dringend vorschlagen (in Notification markieren).
 - Ziel erreicht?      → Verkauf oder Stop nachziehen vorschlagen.
 
+## SCHRITT 3c — Web-Recherche (Reddit + Weltpolitik, KRITISCH)
+Nutze die Tools WebSearch / WebFetch. Quellenkritik ist Pflicht (siehe CLAUDE.md).
+
+a) Reddit-Trends (tagesaktuell):
+   Suche z.B. "site:reddit.com r/stocks <heute>", r/investing, r/StockMarket,
+   r/wallstreetbets. Finde: Welche Titel/Themen werden gerade diskutiert?
+   Für JEDEN Punkt kritisch bewerten:
+   - Ist die These fundiert begründet (Zahlen, Quellen, Logik)? → ggf. beachten.
+   - Oder nur Hype / Pump / Troll / Hater / reine Emotion? → ignorieren oder
+     ausdrücklich als "unbestätigtes Gerücht" markieren. NICHTS übernehmen.
+   Notiere je relevanten Punkt: Stimmung, Glaubwürdigkeit (hoch/mittel/niedrig).
+
+b) Weltpolitik / Makro (NUR seriöse Quellen):
+   Suche aktuelle Ereignisse bei Reuters, Bloomberg, AP, FT, Tagesschau,
+   Handelsblatt. Relevant: Zentralbanken, Zinsen, Wahlen, Konflikte, Handel,
+   Regulierung, große Wirtschaftsdaten. Mit Quelle + Datum festhalten.
+
+## SCHRITT 3d — Prognose (faktenbasiert, begründet)
+Verbinde Technik (Schritt 3) + Reddit-Signale (3c-a) + Weltpolitik (3c-b) zu
+einem realistischen Zukunfts-Szenario für die Watchlist/den Markt.
+- JEDE Aussage begründen und mit QUELLE (Link + Datum) belegen.
+- Konfidenz angeben (hoch/mittel/niedrig). Niemals raten oder Vermutung als
+  Fakt darstellen. Bei dünner Faktenlage: ehrlich sagen "unsicher".
+- Diese Prognose fließt in die Trade-Vorschläge (Schritt 4) ein, ersetzt aber
+  NICHT die harten Regeln. Bei größeren Unsicherheiten: dem Nutzer vorlegen,
+  nicht eigenmächtig handeln.
+
 ## SCHRITT 4 — Trades VORSCHLAGEN (NICHT selbst handeln!)
 WICHTIG: Du handelst NICHT eigenständig. Du machst nur Vorschläge.
 Der Nutzer entscheidet und führt Trades selbst aus.
@@ -55,7 +82,9 @@ Schreibe einen Vorschlag MIT DATIERTER QUELLE in research-log.md und in die
 Notification. Entscheidung trifft der Nutzer. (Siehe CLAUDE.md → Krypto-Regel.)
 
 ## SCHRITT 6 — Memory aktualisieren (Deutsch)
-- research-log.md: heutiger Eintrag (Makro, Risiken, Plan, ggf. Krypto-Hinweis)
+- research-log.md: heutiger Eintrag (Makro, Risiken, Plan, ggf. Krypto-Hinweis,
+  Reddit-Erkenntnisse MIT Glaubwürdigkeit, Weltpolitik MIT Quellen, Prognose MIT
+  Begründung + Konfidenz + Quellen-Links/Datum)
 - trade-log.md: jeden ausgeführten/abgelehnten Trade mit Begründung
 - portfolio.md: neuen Snapshot + offene Positionen
 
@@ -63,6 +92,10 @@ Notification. Entscheidung trifft der Nutzer. (Siehe CLAUDE.md → Krypto-Regel.
 Sende via `./scripts/notify.sh "..."`. Format:
 "📊 Daily [Datum]
 Markt: [bullish/neutral/bearish]
+
+🌍 Lage: [1–2 Sätze Weltpolitik/Makro, mit Quelle]
+💬 Reddit: [1 Satz Trend + Glaubwürdigkeit, oder 'nichts Belastbares']
+🔮 Prognose: [kurzes faktenbasiertes Szenario] (Konfidenz: hoch/mittel/niedrig)
 
 💡 Vorschläge (du entscheidest):
 [je Vorschlag:] KAUF [Symbol] [Menge] | Einstieg ~[Kurs] | Stop [Kurs] | Ziel [Kurs] | R/R [x]:1 — [Begründung]
