@@ -43,4 +43,4 @@ Stop-Loss-Kurs · Zielkurs · Risk/Reward. Nur R/R ≥ 2:1 kommt in den Plan.
   (siehe CLAUDE.md → Krypto-Regel). Keine eigenständigen Krypto-Trades.
 
 ## Lessons Learned
-- (Agent trägt hier ein, was funktioniert und was nicht.)
+- **KW 23:** Infrastruktur-Check bestanden (API, Scripts). Tagesroutinen fehlen noch — ohne tägliche Research-Läufe keine Handelsentscheidungen möglich. Priorität: Tagesroutine als Scheduled Task aktivieren.
