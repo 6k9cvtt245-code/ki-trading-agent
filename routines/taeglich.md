@@ -28,14 +28,16 @@ Beantworte für dich:
 - Gibt es Swing-Setups gemäß Entscheidungsmatrix in strategie.md?
 - Brauchen offene Positionen Aufmerksamkeit (Ziel nah? Stop nachziehen?)?
 
-## SCHRITT 4 — Trades planen & ausführen
+## SCHRITT 4 — Trades VORSCHLAGEN (NICHT selbst handeln!)
+WICHTIG: Du handelst NICHT eigenständig. Du machst nur Vorschläge.
+Der Nutzer entscheidet und führt Trades selbst aus.
+
 Für jedes Kauf-Setup berechne EXPLIZIT: Einstieg, Stop-Loss, Ziel, R/R.
-Nur Setups mit R/R ≥ 2:1 weiterverfolgen.
-Führe Trades NUR über das Script aus (es erzwingt alle Limits):
-  Kauf:    `./scripts/alpaca-trade.sh buy SYMBOL QTY STOP_PRICE TARGET_PRICE`
-  Verkauf: `./scripts/alpaca-trade.sh sell SYMBOL QTY`
-Wenn das Script eine Order ablehnt: NICHT umgehen — Grund verstehen und journalen.
-Im Zweifel: nicht handeln.
+Nur Setups mit R/R ≥ 2:1 vorschlagen. Prüfe sie gegen alle Limits in CLAUDE.md.
+Formuliere jeden Vorschlag klar und vollständig (Symbol, Menge, Einstieg,
+Stop-Loss, Ziel, R/R, Begründung in 1 Satz) — für die Notification (Schritt 7).
+Führe KEINE Order aus. Rufe scripts/alpaca-trade.sh NICHT auf.
+Im Zweifel: keinen Vorschlag machen.
 
 ## SCHRITT 5 — Krypto-Check (nur Hinweis, kein Handel)
 Wenn dir etwas auffällt, das Krypto als Chance nahelegt: NICHT raten.
@@ -47,13 +49,18 @@ Notification. Entscheidung trifft der Nutzer. (Siehe CLAUDE.md → Krypto-Regel.
 - trade-log.md: jeden ausgeführten/abgelehnten Trade mit Begründung
 - portfolio.md: neuen Snapshot + offene Positionen
 
-## SCHRITT 7 — Notification
-Sende via `./scripts/notify.sh "..."` nur wenn relevant (Trade, Risiko,
-Krypto-Hinweis). Format:
+## SCHRITT 7 — Notification mit Vorschlägen
+Sende via `./scripts/notify.sh "..."`. Format:
 "📊 Daily [Datum]
 Markt: [bullish/neutral/bearish]
-Trades: [kurz, oder 'keine']
-⚠️ [Risiko/Krypto-Hinweis falls vorhanden]"
+
+💡 Vorschläge (du entscheidest):
+[je Vorschlag:] KAUF [Symbol] [Menge] | Einstieg ~[Kurs] | Stop [Kurs] | Ziel [Kurs] | R/R [x]:1 — [Begründung]
+[oder:] Heute keine Vorschläge.
+
+⚠️ [Risiko/Krypto-Hinweis falls vorhanden]
+
+Zum Ausführen: dem Nutzer im Claude-Chat sagen, welchen Vorschlag er umsetzen will."
 
 ## SCHRITT 8 — GitHub Push
 git add memory/
