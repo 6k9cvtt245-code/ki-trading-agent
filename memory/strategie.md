@@ -58,7 +58,54 @@ Stop-Loss-Kurs · Zielkurs · Risk/Reward. Nur R/R ≥ 2:1 kommt in den Plan.
 - (Agent ergänzt laufend)
 
 ## Aktien-Watchlist
-- (Agent befüllt basierend auf Research)
+
+> Quellen: Quiver Quantitative (STOCK Act Daten 2025–2026), The BRRR (Jun 2026),
+> Capitol Trades. Hinweis: Alle Kongress-Daten haben 30–45 Tage Verzug.
+> Kein blindes Kopieren — nur ein Faktor unter vielen. Agent prüft täglich technisch.
+
+### AI / Halbleiter (Kongress-Sektor #1, 34% der Käufe)
+- **NVDA** (Nvidia)
+  Begründung: Kongress-Kauf #1 (~$5,2M Mai–Jul 2025, Quelle: Quiver Quant).
+  Fundamental: AI-Capex-Boom, Rechenzentren. Volatil → Swing-Setups möglich.
+  Caveat: Hoch bewertet, anfällig für Korrekturen bei Fed-Signalen.
+
+- **MSFT** (Microsoft)
+  Begründung: Kontinuierlich im Kongress-Portfolio (Pelosi u.a.). AI-Infrastruktur
+  (Azure, Copilot). Blue Chip, relativ stabil → gut für ersten Trade.
+  Caveat: Weniger volatile = kleinere Swing-Amplituden.
+
+- **GOOGL** (Alphabet)
+  Begründung: Meistgekauft nach Transaktionszahl (180 Käufe/$3,5M+, Quiver Quant).
+  AI (Gemini, Search, Cloud). Aktuell auch im Tech-Aufwärtstrend.
+  Caveat: Regulierungsrisiko (EU/US Kartellverfahren laufend) beobachten.
+
+- **MU** (Micron Technology)
+  Begründung: 128 Kongress-Käufe/$714K (Quiver Quant). AI-Speicher-Demand
+  (HBM-Chips für KI-Training). Mehr Volatilität als MSFT → bessere R/R-Setups.
+  Caveat: Zyklisch — Chip-Überkapazitäten möglich. Nur bei klarem Aufwärtstrend.
+
+- **TSM** (Taiwan Semiconductor, US ADR: TSM)
+  Begründung: 39 Kongress-Käufe/$1,3M+ (Quiver Quant). Weltgrößter Chip-Auftragsfertiger.
+  Caveat: TAIWAN-RISIKO (geopolitische Spannungen China/Taiwan). Vor jedem
+  Kauf aktuelle Lage prüfen. Nur wenn Risiko gering und Trend klar aufwärts.
+
+### Verteidigung / Defense (Kongress-Sektor #2, 22% — Surge nach Hormuz 2026)
+- **RTX** (Raytheon Technologies)
+  Begründung: Defense-Buying-Surge nach Hormuz-Spannungen (The BRRR, Jun 2026).
+  Crenshaw, Green u.a. aktiv. RTX günstiger als LMT → besser für $500-Konto.
+  Caveat: Geopolitische Lage täglich prüfen. Keine Position wenn Spannungen sich
+  entspannen (Defense-Titel verlieren dann schnell).
+
+### Energie (Kongress-Sektor #3, 18%)
+- **XOM** (ExxonMobil)
+  Begründung: 60 Kongress-Käufe/$979K (Quiver Quant). Ölpreis-Hedge.
+  Caveat: Trotz grüner Rhetorik kauft Kongress Öl — struktureller Hinweis.
+  Ölpreis + geopolitische Lage täglich als Kontext beachten.
+
+### Nicht auf Watchlist (bewusste Entscheidung)
+- AAPL: Kongress verkauft (erscheint in Top-Sales-Liste). Kein Kauf-Signal.
+- META: Kongress verkauft Social Media (Regulierungsdruck erwartet lt. Berichten).
+- LMT: Defense-Kauf, aber Kurs >$500 → zu teuer auch für Bruchteil-Sizing sinnvoll.
 
 ## Krypto-Watchlist
 - NICHT angebunden. Nur Vorschläge mit datierten Quellen an den Nutzer
