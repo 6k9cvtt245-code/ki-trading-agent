@@ -58,8 +58,11 @@ Du recherchierst zusätzlich im Web (Tools: WebSearch, WebFetch):
   Troll oder Hater-Geschwätz? Emotion, "to the moon", koordinierte Pumps,
   Quellenlosigkeit → ignorieren oder klar als unbestätigt markieren.
 - **Weltpolitik/Makro** NUR aus seriösen Quellen (z.B. Reuters, Bloomberg, AP,
-  Financial Times, Tagesschau, Handelsblatt). Ereignisse, die Märkte bewegen
-  könnten (Wahlen, Konflikte, Zentralbanken, Handel, Regulierung).
+  Financial Times, Tagesschau, Handelsblatt, Bundesbank, EZB/ECB).
+  Ereignisse, die Märkte bewegen könnten: Wahlen, Konflikte, Zentralbanken
+  (Fed UND EZB), Zinsentscheide, EUR/USD-Bewegungen, Handel, Regulierung.
+  Da der Nutzer in Deutschland lebt, sind EU/DE-Entwicklungen besonders
+  relevant — EWG/VGK als EU-Proxy-ETFs auf der Watchlist beachten.
 - **Politiker-Trades & Insider-Signale** (drei Quellen, unterschiedliche Datenlage):
   1. **US-Kongress** — capitoltrades.com: einzelne Trades mit Datum + Betrag.
      ABER: Meldepflicht gilt erst 30–45 Tage nach dem Trade. Nie blind kopieren.

@@ -20,11 +20,13 @@ Führe aus: `./scripts/alpaca-portfolio.sh`
 ## SCHRITT 3 — Marktdaten & Analyse (Research via Alpaca)
 Für jeden Titel auf der Watchlist (memory/strategie.md) UND jede offene Position:
 `./scripts/alpaca-bars.sh SYMBOL`
+Watchlist umfasst US-ETFs (SPY, VOO, QQQ, VTI) UND EU-Proxy-ETFs (EWG, VGK).
 Werte aus: Trend (aufwärts/seitwärts/abwärts), Lage zu SMA20/SMA50,
 20-Tage-Hoch/Tief, Abstand zur SMA50.
 
 Beantworte für dich:
-- Wie ist die übergeordnete Marktlage (z.B. anhand SPY/VOO)?
+- Wie ist die übergeordnete Marktlage (US: SPY/VOO, Europa: EWG/VGK)?
+- Wie entwickelt sich EUR/USD? (beeinflusst EWG/VGK zusätzlich)
 - Gibt es Swing-Setups gemäß Entscheidungsmatrix in strategie.md?
 
 ## SCHRITT 3b — WEICHE STOPS prüfen (sehr wichtig bei Bruchteilen!)
@@ -48,8 +50,15 @@ a) Reddit-Trends (tagesaktuell):
 
 b) Weltpolitik / Makro (NUR seriöse Quellen):
    Suche aktuelle Ereignisse bei Reuters, Bloomberg, AP, FT, Tagesschau,
-   Handelsblatt. Relevant: Zentralbanken, Zinsen, Wahlen, Konflikte, Handel,
-   Regulierung, große Wirtschaftsdaten. Mit Quelle + Datum festhalten.
+   Handelsblatt, Bundesbank (bundesbank.de), EZB (ecb.europa.eu).
+   Zwei Zentralbanken täglich beobachten:
+   - Fed (US): Zinsentscheide, FOMC-Protokolle, Fed-Sprecher-Aussagen
+   - EZB (EU): Zinsentscheide, Draghi/Lagarde-Statements, EUR-Inflationsdaten
+   Außerdem: EUR/USD-Kurs (beeinflusst EWG/VGK direkt), DAX-Entwicklung als
+   Kontext für EWG, EU-Wirtschaftsdaten (BIP, CPI, PMI, Arbeitsmarkt).
+   Relevante DE/EU-Ereignisse: Bundestagsentscheide, EU-Regulierung (z.B.
+   AI Act, Energiepolitik), geopolitische Lage in Europa.
+   Alles mit Quelle + Datum festhalten.
 
 c) Politiker-Trades & Insider-Signale (drei Quellen, kritisch verwenden):
    Suche auf diesen Plattformen nach aktuellen Meldungen:
@@ -118,7 +127,7 @@ Notification. Entscheidung trifft der Nutzer. (Siehe CLAUDE.md → Krypto-Regel.
 ## SCHRITT 7 — Notification mit Vorschlägen
 Sende via `./scripts/notify.sh "..."`. Format:
 "📊 Daily [Datum]
-Markt: [bullish/neutral/bearish]
+🇺🇸 US: [bullish/neutral/bearish] | 🇪🇺 EU: [bullish/neutral/bearish]
 
 🌍 Lage: [1–2 Sätze Weltpolitik/Makro, mit Quelle]
 💬 Reddit: [1 Satz Trend + Glaubwürdigkeit, oder 'nichts Belastbares']

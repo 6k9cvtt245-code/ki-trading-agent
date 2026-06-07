@@ -21,11 +21,12 @@ Renditeziel wird NACH der Paper-Phase datenbasiert festgelegt — nicht geraten.
   (Menge mit Punkt = Bruchteil → einfache Markt-Order ohne Börsen-Stop.)
 
 ## Research-Ansatz (täglich)
-1. Makro-Lage: Zinsen, Inflation, Fed/EZB-Signale.
+1. Makro-Lage: Zinsen, Inflation, Fed + EZB-Signale, EUR/USD-Entwicklung.
 2. Sentiment: Fear & Greed Index, allgemeine Risikostimmung.
-3. News-Scan: Was bewegt heute die Märkte?
-4. Watchlist prüfen: Gibt es Setup-Signale?
-5. Anstehende Risiken: Wirtschaftsdaten, Earnings der Watchlist-Titel.
+3. News-Scan: Was bewegt heute die Märkte? (US + EU)
+4. Watchlist prüfen: Gibt es Setup-Signale? (inkl. EWG/VGK für EU-Exposure)
+5. Anstehende Risiken: Wirtschaftsdaten, Earnings der Watchlist-Titel,
+   EZB-Sitzungen, Bundesbank-Statements, EU-Wirtschaftsdaten (BIP, CPI).
 
 ## Entscheidungsmatrix Kauf (ALLE drei müssen stimmen)
 - [ ] Übergeordneter Trend intakt (Wochen-/Tageschart)
@@ -42,9 +43,18 @@ Stop-Loss-Kurs · Zielkurs · Risk/Reward. Nur R/R ≥ 2:1 kommt in den Plan.
 - Deutlich bessere Opportunität gefunden
 
 ## ETF-Watchlist (Kern, US-handelbar via Alpaca)
+
+### US-Markt
 - VTI / ITOT  (US Total Market)
 - VOO / SPY   (S&P 500)
 - QQQ         (Nasdaq 100)
+
+### Europa / Deutschland (US-gelistete ETFs, bilden EU-Märkte ab)
+- EWG         (iShares MSCI Germany — DAX/MDAX-Exposure via Alpaca)
+- VGK         (Vanguard FTSE Europe — breites EU-Exposure)
+  Hinweis: Diese ETFs bilden den EU-Markt ab, handeln aber in USD auf US-Börsen.
+  Kurs folgt DAX/EUR-Entwicklung + EUR/USD-Währungseffekt. Beide täglich prüfen.
+
 - (Agent ergänzt laufend)
 
 ## Aktien-Watchlist
