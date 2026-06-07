@@ -8,7 +8,7 @@ Alle Outputs auf Deutsch. Projektverzeichnis: /Users/sdcwed/ki-trading-agent/
 
 ## SCHRITT 1 — Markt-Zeiten prüfen (IMMER ZUERST)
 
-US-Markt offen: Mo–Fr 15:30–22:00 deutsche Zeit (CEST, UTC+2).
+Aktiv: Mo–Fr 07:30–23:00 deutsche Zeit (CEST, UTC+2).
 Prüfe die aktuelle Uhrzeit. Wenn NICHT in diesem Fenster:
 → STOP. Keine weiteren Schritte, keine Logs, keine Notifications.
 
