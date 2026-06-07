@@ -26,8 +26,8 @@ RESP="$(curl -sf -X POST \
   "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
   --data-urlencode "text=${MSG}" \
-  -d "parse_mode=HTML" \
-  -d "disable_web_page_preview=true" \
+  --data-urlencode "parse_mode=HTML" \
+  --data-urlencode "disable_web_page_preview=true" \
   || die "Telegram-Senden fehlgeschlagen (Token/Chat-ID prüfen).")"
 
 if [ "$(echo "$RESP" | jq -r '.ok')" != "true" ]; then
