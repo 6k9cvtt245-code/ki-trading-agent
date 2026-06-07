@@ -1,0 +1,12 @@
+# NIEMALS Secrets committen
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# OS / Editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
