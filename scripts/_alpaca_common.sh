@@ -68,7 +68,7 @@ latest_price() {
   curl -sf \
     -H "APCA-API-KEY-ID: ${ALPACA_API_KEY}" \
     -H "APCA-API-SECRET-KEY: ${ALPACA_SECRET_KEY}" \
-    "${data_url}/v2/stocks/$1/trades/latest" \
+    "${data_url}/v2/stocks/$1/trades/latest?feed=iex" \
     | jq -r '.trade.p' \
     || die "Kursabfrage für $1 fehlgeschlagen."
 }

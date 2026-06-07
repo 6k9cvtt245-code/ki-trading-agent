@@ -17,11 +17,16 @@ SYMBOL="$(echo "${1:?Aufruf: $0 SYMBOL [TAGE]}" | tr '[:lower:]' '[:upper:]')"
 DAYS="${2:-60}"
 
 DATA_URL="https://data.alpaca.markets"
+# Startdatum: genug Kalendertage zurück, um DAYS Handelstage zu bekommen
+# (~Faktor 2 wegen Wochenenden/Feiertagen). Plattformübergreifend (macOS/Linux).
+CAL_DAYS=$(( DAYS * 2 + 10 ))
+START="$(date -v-${CAL_DAYS}d +%Y-%m-%d 2>/dev/null || date -d "${CAL_DAYS} days ago" +%Y-%m-%d)"
+
 # feed=iex = kostenloser Datenfeed (für Paper/Free-Accounts).
 RESP="$(curl -sf \
   -H "APCA-API-KEY-ID: ${ALPACA_API_KEY}" \
   -H "APCA-API-SECRET-KEY: ${ALPACA_SECRET_KEY}" \
-  "${DATA_URL}/v2/stocks/${SYMBOL}/bars?timeframe=1Day&limit=${DAYS}&feed=iex" \
+  "${DATA_URL}/v2/stocks/${SYMBOL}/bars?timeframe=1Day&start=${START}&limit=${DAYS}&feed=iex" \
   || die "Bars-Abfrage für $SYMBOL fehlgeschlagen.")"
 
 N="$(echo "$RESP" | jq '.bars | length')"
