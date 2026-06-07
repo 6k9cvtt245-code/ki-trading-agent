@@ -34,7 +34,7 @@ mit dem in memory/portfolio.md notierten Stop-Loss.
 - Kurs <= Stop-Loss?  → VERKAUF dringend vorschlagen (in Notification markieren).
 - Ziel erreicht?      → Verkauf oder Stop nachziehen vorschlagen.
 
-## SCHRITT 3c — Web-Recherche (Reddit + Weltpolitik, KRITISCH)
+## SCHRITT 3c — Web-Recherche (Reddit + Weltpolitik + Politiker-Trades, KRITISCH)
 Nutze die Tools WebSearch / WebFetch. Quellenkritik ist Pflicht (siehe CLAUDE.md).
 
 a) Reddit-Trends (tagesaktuell):
@@ -50,6 +50,33 @@ b) Weltpolitik / Makro (NUR seriöse Quellen):
    Suche aktuelle Ereignisse bei Reuters, Bloomberg, AP, FT, Tagesschau,
    Handelsblatt. Relevant: Zentralbanken, Zinsen, Wahlen, Konflikte, Handel,
    Regulierung, große Wirtschaftsdaten. Mit Quelle + Datum festhalten.
+
+c) Politiker-Trades & Insider-Signale (drei Quellen, kritisch verwenden):
+   Suche auf diesen Plattformen nach aktuellen Meldungen:
+
+   1. US-Kongress → https://www.capitoltrades.com
+      Suche nach: aktiv handelnde Abgeordnete der letzten 30 Tage.
+      Achte auf: Sektor/Titel, Datum der Meldung vs. Datum des Trades (Delay!).
+      Nur verwenden wenn: Titel auf unserer Watchlist ODER relevanter Sektor-Hinweis.
+      Zeitverzug 30–45 Tage IMMER nennen. Nie als "Insider-Signal" framen.
+
+   2. EU-Parlament → https://www.europarl.europa.eu/meps/en/home
+      Reiter: "Declarations of financial interests" je MEP.
+      Achtung: Keine Einzel-Trade-Daten. Nur jährliche Interessenmeldungen.
+      Verwende nur für: Branchenhinweise (z.B. Ausschuss-Mitglied + regulierter Sektor).
+      Wenn keine relevanten Daten → explizit "keine verwertbaren EU-Signale heute".
+
+   3. Bundestag → https://www.abgeordnetenwatch.de (Nebeneinkünfte/Transparenz)
+      Alternativ: https://www.bundestag.de/abgeordnete/transparenz
+      Achtung: Keine Einzel-Trades. Nur Nebeneinkünfte und Beteiligungen.
+      Verwende nur für: grobe Interessenkonflikte in relevanten Sektoren.
+      Wenn keine relevanten Daten → explizit "keine verwertbaren Bundestag-Signale heute".
+
+   Für alle drei gilt (PFLICHT):
+   - Quellenlink + Datum IMMER angeben.
+   - Zeitverzug transparent nennen.
+   - NIEMALS als Handelssignal behandeln — nur als ein Hinweis unter vielen.
+   - Entscheidung trifft immer der Nutzer.
 
 ## SCHRITT 3d — Prognose (faktenbasiert, begründet)
 Verbinde Technik (Schritt 3) + Reddit-Signale (3c-a) + Weltpolitik (3c-b) zu
@@ -95,6 +122,7 @@ Markt: [bullish/neutral/bearish]
 
 🌍 Lage: [1–2 Sätze Weltpolitik/Makro, mit Quelle]
 💬 Reddit: [1 Satz Trend + Glaubwürdigkeit, oder 'nichts Belastbares']
+🏛️ Politiker: [Hinweis falls relevant, mit Quelle + Zeitverzug, oder 'keine verwertbaren Signale']
 🔮 Prognose: [kurzes faktenbasiertes Szenario] (Konfidenz: hoch/mittel/niedrig)
 
 💡 Vorschläge (du entscheidest):
