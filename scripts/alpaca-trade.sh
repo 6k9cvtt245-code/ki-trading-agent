@@ -34,6 +34,10 @@ SYMBOL="$(echo "$SYMBOL" | tr '[:lower:]' '[:upper:]')"
 # Hilfsfunktion für Float-Vergleiche.
 fcmp() { awk "BEGIN{exit !($1)}"; }
 
+# Bruchteil-Order erkennen (Menge enthält einen Punkt, z.B. 0.1).
+FRACTIONAL=0
+case "$QTY" in *.*) FRACTIONAL=1;; esac
+
 # ── Konto-Kennzahlen holen ──
 ACCOUNT="$(alpaca_get /v2/account)"
 POSITIONS="$(alpaca_get /v2/positions)"
@@ -128,7 +132,15 @@ echo "  Stop-Loss:      \$$STOP_PRICE  (Risiko \$$RISK_AMOUNT = ${RISK_PCT}%)"
 [ -n "$TARGET_PRICE" ] && echo "  Ziel:           \$$TARGET_PRICE  (R/R ${RR}:1)"
 echo "────────────────────────────────────────"
 
-if [ -n "$TARGET_PRICE" ]; then
+if [ "$FRACTIONAL" = "1" ]; then
+  # Bruchteil: Alpaca erlaubt nur einfache Markt-Order (Tag), KEINEN
+  # angehängten Stop-Loss. Der Stop muss in Software überwacht werden.
+  echo "⚠️  BRUCHTEIL-ORDER: Stop-Loss (\$$STOP_PRICE) wird NICHT von der Börse"
+  echo "    überwacht! Der Agent muss den Kurs täglich prüfen und bei Bruch"
+  echo "    des Stops zum Verkauf raten. Stop in memory/portfolio.md notieren."
+  BODY="$(jq -nc --arg s "$SYMBOL" --arg q "$QTY" \
+    '{symbol:$s, qty:$q, side:"buy", type:"market", time_in_force:"day"}')"
+elif [ -n "$TARGET_PRICE" ]; then
   BODY="$(jq -nc --arg s "$SYMBOL" --arg q "$QTY" --arg sp "$STOP_PRICE" --arg tp "$TARGET_PRICE" \
     '{symbol:$s, qty:$q, side:"buy", type:"market", time_in_force:"gtc",
       order_class:"bracket",

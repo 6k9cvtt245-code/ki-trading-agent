@@ -26,16 +26,26 @@ Werte aus: Trend (aufwärts/seitwärts/abwärts), Lage zu SMA20/SMA50,
 Beantworte für dich:
 - Wie ist die übergeordnete Marktlage (z.B. anhand SPY/VOO)?
 - Gibt es Swing-Setups gemäß Entscheidungsmatrix in strategie.md?
-- Brauchen offene Positionen Aufmerksamkeit (Ziel nah? Stop nachziehen?)?
+
+## SCHRITT 3b — WEICHE STOPS prüfen (sehr wichtig bei Bruchteilen!)
+Bei Bruchteil-Positionen gibt es KEINEN Börsen-Stop. Du bist der Stop.
+Für JEDE offene Position: vergleiche aktuellen Kurs (alpaca-bars.sh / portfolio)
+mit dem in memory/portfolio.md notierten Stop-Loss.
+- Kurs <= Stop-Loss?  → VERKAUF dringend vorschlagen (in Notification markieren).
+- Ziel erreicht?      → Verkauf oder Stop nachziehen vorschlagen.
 
 ## SCHRITT 4 — Trades VORSCHLAGEN (NICHT selbst handeln!)
 WICHTIG: Du handelst NICHT eigenständig. Du machst nur Vorschläge.
 Der Nutzer entscheidet und führt Trades selbst aus.
 
-Für jedes Kauf-Setup berechne EXPLIZIT: Einstieg, Stop-Loss, Ziel, R/R.
-Nur Setups mit R/R ≥ 2:1 vorschlagen. Prüfe sie gegen alle Limits in CLAUDE.md.
-Formuliere jeden Vorschlag klar und vollständig (Symbol, Menge, Einstieg,
-Stop-Loss, Ziel, R/R, Begründung in 1 Satz) — für die Notification (Schritt 7).
+Konto ist klein ($500) → in DOLLAR und BRUCHTEILEN denken (siehe strategie.md):
+- Positionsgröße max ~$75 (15% von $500). Menge = Dollar-Betrag / aktueller Kurs,
+  als Bruchteil (z.B. $70 / $700 = 0.1 Anteile).
+- Stop-Loss so wählen, dass Verlust (Einstieg − Stop) × Menge ≤ ~$10 (2% von $500).
+
+Für jedes Kauf-Setup berechne EXPLIZIT: Einstieg, Bruchteil-Menge, Stop-Loss,
+Ziel, R/R. Nur Setups mit R/R ≥ 2:1. Prüfe gegen alle Limits in CLAUDE.md.
+Formuliere jeden Vorschlag vollständig für die Notification (Schritt 7).
 Führe KEINE Order aus. Rufe scripts/alpaca-trade.sh NICHT auf.
 Im Zweifel: keinen Vorschlag machen.
 
