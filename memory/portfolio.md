@@ -5,11 +5,11 @@
 > Zusammenfassung für den nächsten Agenten-Lauf.
 
 ## Snapshot
-- Stand: — (noch kein Lauf)
+- Stand: 2026-06-07 10:30 UTC
 - Modus: PAPER
-- Portfolio-Wert: —
-- Cash: —
-- Tages-P&L: —
+- Portfolio-Wert: $500.00
+- Cash: $500.00
+- Tages-P&L: 0.00%
 - Offene Positionen: 0 / 8
 
 ## Offene Positionen
