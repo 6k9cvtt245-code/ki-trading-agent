@@ -112,10 +112,31 @@ Formuliere jeden Vorschlag vollständig für die Notification (Schritt 7).
 Führe KEINE Order aus. Rufe scripts/alpaca-trade.sh NICHT auf.
 Im Zweifel: keinen Vorschlag machen.
 
-## SCHRITT 5 — Krypto-Check (nur Hinweis, kein Handel)
-Wenn dir etwas auffällt, das Krypto als Chance nahelegt: NICHT raten.
-Schreibe einen Vorschlag MIT DATIERTER QUELLE in research-log.md und in die
-Notification. Entscheidung trifft der Nutzer. (Siehe CLAUDE.md → Krypto-Regel.)
+## SCHRITT 5 — Krypto-Monitor (täglich, kein Handel — nur Einschätzung)
+Krypto wird TÄGLICH beobachtet und im Telegram-Briefing ausgegeben.
+Kein Trade, keine Order. Nur Einschätzung für den Nutzer.
+
+a) Marktdaten holen (CoinGecko, kostenlos, kein API-Key nötig):
+   - Top-10 nach Marktkapitalisierung:
+     WebFetch: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false
+   - Top-5 Gewinner/Verlierer (24h):
+     WebFetch: https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=5&page=1
+   - Pflicht-Coins direkt prüfen (BTC, ETH, SOL):
+     WebFetch: https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true&include_7d_change=true
+
+b) Für jeden relevanten Coin auswerten:
+   - Aktueller Preis, 24h-Änderung, 7d-Trend
+   - Marktlage: bullish / neutral / bearish (kurze Begründung)
+   - Gibt es ein Setup das zur Swing-Strategie passt? (Trend + Korrektur + Sentiment)
+   - Wenn ja: Einstiegsbereich, logischer Stop, Ziel, R/R abschätzen
+   - Wenn nein: explizit "kein Setup" — niemals raten
+
+c) Quellen-Pflicht (NUR seriöse Quellen für Begründungen):
+   CoinDesk (coindesk.com), The Block (theblock.co), Reuters Crypto.
+   NIEMALS: Reddit, Twitter/X-Hype, anonyme Telegram-Kanäle.
+
+d) Ergebnis in research-log.md + Notification (Schritt 7) eintragen.
+   Auch "kein Signal heute" ist ein gültiges Ergebnis — besser als Raten.
 
 ## SCHRITT 6 — Memory aktualisieren (Deutsch)
 - research-log.md: heutiger Eintrag (Makro, Risiken, Plan, ggf. Krypto-Hinweis,
@@ -134,11 +155,19 @@ Sende via `./scripts/notify.sh "..."`. Format:
 🏛️ Politiker: [Hinweis falls relevant, mit Quelle + Zeitverzug, oder 'keine verwertbaren Signale']
 🔮 Prognose: [kurzes faktenbasiertes Szenario] (Konfidenz: hoch/mittel/niedrig)
 
-💡 Vorschläge (du entscheidest):
+💡 Aktien-Vorschläge (du entscheidest):
 [je Vorschlag:] KAUF [Symbol] [Menge] | Einstieg ~[Kurs] | Stop [Kurs] | Ziel [Kurs] | R/R [x]:1 — [Begründung]
-[oder:] Heute keine Vorschläge.
+[oder:] Heute keine Aktien-Vorschläge.
 
-⚠️ [Risiko/Krypto-Hinweis falls vorhanden]
+🪙 Krypto-Radar (kein Handel — nur Einschätzung):
+BTC: $[Kurs] ([+/-]% 24h) — [bullish/neutral/bearish]
+ETH: $[Kurs] ([+/-]% 24h) — [bullish/neutral/bearish]
+SOL: $[Kurs] ([+/-]% 24h) — [bullish/neutral/bearish]
+Top-Mover: [Symbol] [+/-]% — [1 Satz Grund falls bekannt]
+[Optional:] 💡 [Coin]: Mögliches Setup — Einstieg ~[Kurs], Stop ~[Kurs], Ziel ~[Kurs], R/R ~[x]:1 | Quelle: [Link] | Konfidenz: [hoch/mittel/niedrig]
+[oder:] Kein Krypto-Setup heute.
+
+⚠️ [Sonstiger Risikohinweis falls vorhanden]
 
 Zum Ausführen: dem Nutzer im Claude-Chat sagen, welchen Vorschlag er umsetzen will."
 

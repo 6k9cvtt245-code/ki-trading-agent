@@ -107,9 +107,25 @@ Stop-Loss-Kurs · Zielkurs · Risk/Reward. Nur R/R ≥ 2:1 kommt in den Plan.
 - META: Kongress verkauft Social Media (Regulierungsdruck erwartet lt. Berichten).
 - LMT: Defense-Kauf, aber Kurs >$500 → zu teuer auch für Bruchteil-Sizing sinnvoll.
 
-## Krypto-Watchlist
-- NICHT angebunden. Nur Vorschläge mit datierten Quellen an den Nutzer
-  (siehe CLAUDE.md → Krypto-Regel). Keine eigenständigen Krypto-Trades.
+## Krypto-Watchlist (täglich beobachten, nie handeln)
+Datenquelle: CoinGecko API (kostenlos, kein Key). Kein Alpaca-Anschluss.
+Ziel: tägliche Einschätzung im Telegram-Briefing. Kauf-Entscheidung = Nutzer.
+
+### Pflicht-Coins (immer prüfen)
+- BTC  (Bitcoin)   — Marktführer, dominiert Gesamtsentiment
+- ETH  (Ethereum)  — Smart Contracts, DeFi-Indikator
+- SOL  (Solana)    — Layer-1, Performancekennzahl für Alt-Season
+
+### Dynamisch (täglich via CoinGecko Top-10 + Top-Mover)
+- Top-10 nach Marktkapitalisierung täglich abrufen
+- Top-5 Gewinner/Verlierer 24h täglich abrufen
+- Auffällige Coins mit Setup → Hinweis im Briefing (mit Quelle + Konfidenz)
+
+### Regeln
+- KEIN Handel. Nur Beobachtung + optionale Einschätzung.
+- Begründung immer mit datierter Quelle (CoinDesk, The Block, Reuters Crypto).
+- NIEMALS Reddit/Twitter-Hype als Quelle.
+- "Kein Signal heute" ist ein valides Ergebnis.
 
 ## Lessons Learned
 - **KW 23:** Infrastruktur-Check bestanden (API, Scripts). Tagesroutinen fehlen noch — ohne tägliche Research-Läufe keine Handelsentscheidungen möglich. Priorität: Tagesroutine als Scheduled Task aktivieren.
